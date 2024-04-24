@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción - Gimnasio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: auto;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #ff5421;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff5421;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="procesar_encuesta.php" method="post">
+        <h2>Encuesta de Satisfacción - Gimnasio</h2>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label for="membresia">Número de Membresía:</label>
+        <input type="text" id="membresia" name="membresia" required>
+
+        <label for="puntuacion">Puntuación del servicio (1-5):</label>
+        <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" required>
+
+        <label>¿Cómo calificarías la limpieza del gimnasio?</label>
+        <input type="radio" name="limpieza" value="excelente" required> Excelente
+        <input type="radio" name="limpieza" value="bueno"> Bueno
+        <input type="radio" name="limpieza" value="regular"> Regular
+        <input type="radio" name="limpieza" value="deficiente"> Deficiente
+
+        <label for="comentarios">Comentarios adicionales:</label>
+        <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+
+        <button type="submit">Enviar Encuesta</button>
+    </form>
+
+</body>
+</html>

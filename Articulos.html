@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coders-Fit - Tienda de Suplementos y Artículos de Gimnasio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            color: #333;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .producto {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .producto img {
+            width: 100%; /* Ajusta la imagen al 100% del ancho del contenedor */
+            border-radius: 8px; /* Conserva los bordes redondeados */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        .precio {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .agregar-carrito {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #4caf50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .agregar-carrito-container {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        #carrito {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        #lista-carrito {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #lista-carrito li {
+            margin-bottom: 10px;
+        }
+
+        #total {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        #total-iva {
+            text-align: right;
+            margin-top: 10px;
+            color: #e44d26;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Coders-Fit</h1>
+        <p>Tienda de Suplementos y Artículos de Gimnasio</p>
+    </header>
+
+    <nav>
+        <a href="#suplementos">Suplementos</a>
+        <a href="#proteinas">Proteínas</a>
+        <a href="#tenis">Tenis</a>
+        <a href="#otros">Otros Artículos</a>
+    </nav>
+
+    <section id="suplementos" class="producto">
+        <h2>Suplementos</h2>
+        <p>Descubre nuestra selección de suplementos para potenciar tu rendimiento en el gimnasio.</p>
+        <!-- Puedes agregar imágenes, descripciones y precios aquí -->
+        <img src="Creatina.jpg" alt="Descripción">
+    <p>Excelente creatina que nos ayuda a mejorar el rendimiento y resultados.</p>
+    <p class="precio">$800.00 MXN</p>
+    <div class="agregar-carrito-container">
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Creatina', 800.00)">Agregar al Carrito</button>
+    </div>
+    </section>
+
+    <section id="proteinas" class="producto">
+        <h2>Proteínas</h2>
+        <p>Encuentra las mejores proteínas para apoyar tu desarrollo muscular.</p>
+        <!-- Puedes agregar imágenes, descripciones y precios aquí -->
+        <img src="Proteina.jpg" alt="Descripción">
+    <p>Excelente Proteina que nos ayuda a mejorar el rendimiento y resultados.</p>
+    <p class="precio">$1600.00 MXN</p>
+    <div class="agregar-carrito-container"></div>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Proteina', 1600.00)">Agregar al Carrito</button>
+    </section>
+    
+    <section id="tenis" class="producto">
+        <h2>Tenis</h2>
+        <p>Explora nuestra colección de tenis diseñados para brindar comodidad y estilo durante tus entrenamientos.</p>
+        <!-- Puedes agregar imágenes, descripciones y precios aquí -->
+        <img src="Tenis.jpg" alt="Descripción">
+    <p>Excelentes Tenis que nos ayudan a mejorar y vernos mejores en el gimansio.</p>
+    <p class="precio">$2000.00 MXN</p>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Tenis', 2000.00)">Agregar al Carrito</button>
+    <img src="Tenis2.jpg" alt="Descripción">
+    <p>Tenis de excelnete Calidad.</p>
+    <p class="precio">$2200.00 MXN</p>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Tenis2', 2200.00)">Agregar al Carrito</button>
+    </section>
+
+    <section id="otros" class="producto">
+        <h2>Otros Artículos</h2>
+        <p>Descubre una variedad de artículos esenciales para tu rutina de ejercicios.</p>
+        <!-- Puedes agregar imágenes, descripciones y precios aquí -->
+        <img src="Bandas de Resistencia.jpg" alt="Descripción">
+    <p>Excelente Banda de Resistencia que nos ayuda a mejorar el rendimiento y resultados.</p>
+    <p class="precio">$120.00 MXN</p>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Bandas de Resistencia', 120.00)">Agregar al Carrito</button>
+    <img src="Cinturon.jpg" alt="Descripción">
+    <p>Cinturon de excelnete Calidad que nos ayuda a tener un Mejor Resultado.</p>
+    <p class="precio">$460.00 MXN</p>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Cinturon', 460.00)">Agregar al Carrito</button>
+    <img src="Pesos.jpg" alt="Descripción">
+    <p>Articulo de Complemento del Gym.</p>
+    <p class="precio">$300.00 MXN</p>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Pesos', 300.00)">Agregar al Carrito</button>
+    <img src="Pesas.jpg" alt="Descripción">
+    <p>Complemento Adecuado para Gym.</p>
+    <p class="precio">$200.00 MXN</p>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Pesas', 200.00)">Agregar al Carrito</button>
+    </section>
+    <div id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p id="total">Total: $<span id="total-precio">0.00</span></p>
+        <p id="total-iva">Total con IVA (16%): $<span id="total-precio-iva">0.00</span></p>
+    </div>
+
+    <footer>
+        
+    </footer>
+
+    <script>
+        let carrito = [];
+        let totalPrecio = 0;
+
+        function agregarAlCarrito(producto, precio) {
+            carrito.push({ producto, precio });
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+            const listaCarrito = document.getElementById('lista-carrito');
+            const totalPrecioElement = document.getElementById('total-precio');
+            const totalPrecioIvaElement = document.getElementById('total-precio-iva');
+
+            listaCarrito.innerHTML = '';
+            totalPrecio = 0;
+
+            carrito.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.producto}: $${item.precio.toFixed(2)}`;
+                listaCarrito.appendChild(listItem);
+                totalPrecio += item.precio;
+            });
+
+            totalPrecioElement.textContent = totalPrecio.toFixed(2);
+            const totalConIva = calcularTotalConIva(totalPrecio);
+            totalPrecioIvaElement.textContent = totalConIva.toFixed(2);
+        }
+
+        function calcularTotalConIva(totalSinIva) {
+            const iva = 0.16;
+            return totalSinIva * (1 + iva);
+        }
+    </script>
+    <footer>
+        <p>&copy; 2023 Coders-Fit - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
